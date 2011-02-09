@@ -1,0 +1,54 @@
+production:
+    phpSettings:
+        display_startup_errors: false
+        display_errors: false
+    bootstrap:
+        path: APPLICATION_PATH/Bootstrap.php
+        class: Bootstrap
+    appnamespace: Application
+    resources:
+        frontController:
+            dispatcherClass: Cob\Controller\Dispatcher
+            moduleDirectory: APPLICATION_PATH/modules
+            defaultModule: core
+            params:
+                displayExceptions: false
+        layout:
+            layout: default/frontend
+            layoutPath: APPLICATION_PATH/../public/themes
+        view:
+            encoding: "UTF-8"
+        doctrine:
+            proxyNamespace: Proxies
+            proxyPath: APPLICATION_PATH/domain/Proxies
+            params:
+                driver: pdo_mysql
+                host: localhost
+        log:
+            stream:
+                writerName: Stream
+                writerParams:
+                    stream: APPLICATION_PATH/data/logs/application.log
+                    mode: a
+                filterName: Priority
+                filterParams:
+                    priority: 8
+        modules:
+
+testing:
+    _extends: production
+    phpSettings:
+        display_sartup_errors: true
+        display_errors: true
+
+development: 
+    _extends: production
+    phpSettings:
+        display_startup_errors: true
+        display_errors: true
+    resources:
+        doctrine:
+            params:
+                user: root
+                password: root
+                dbname: codeblog
