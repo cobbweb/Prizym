@@ -14,10 +14,8 @@ production:
             params:
                 displayExceptions: false
         layout:
-            layout: default/frontend
-            layoutPath: APPLICATION_PATH/../public/themes
         view:
-            encoding: "UTF-8"
+            encoding: UTF-8
         doctrine:
             proxyNamespace: Proxies
             proxyPath: APPLICATION_PATH/domain/Proxies
@@ -40,6 +38,11 @@ testing:
     phpSettings:
         display_sartup_errors: true
         display_errors: true
+    resources:
+        doctrine:
+            params:
+                driver: pdo_sqlite
+                path: APPLICATION_PATH/../tests/data/test.db
 
 development: 
     _extends: production
@@ -51,4 +54,7 @@ development:
             params:
                 user: root
                 password: root
-                dbname: codeblog
+                dbname: prizym
+        frontController:
+            params:
+                displayExceptions: true

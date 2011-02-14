@@ -24,7 +24,7 @@ class AdminUserFixture extends \Cob\ORM\Fixture\Fixture
         $cobby->setFirstName('Andrew');
         $cobby->setLastName('Cobby');
         $cobby->setEmail('cobby@cobbweb.me');
-        $cobby->setPassword(String::create('pass2173')->password());
+        $cobby->setPassword('pass2173');
         
         return array($cobby);
     }

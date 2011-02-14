@@ -1,13 +1,28 @@
-<form method="post" action="">
-    <div class="element">
-        <label for="username">Email Address</label>
-        <input type="text" name="username">
-    </div>
-    
-    <div clas="element">
-        <label for="password">Password</label>
-        <input type="password" name="password">
-    </div>
-    
-    <input type="submit" value="Login">
-</form>
+<div id="loginForm">
+    <?php if(isset($this->errors)): ?>
+    <ul>
+        <?php foreach($this->errors as $error): ?>
+        <li><?php echo $error; ?></li>
+        <?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
+    <form method="post" action="/admin/authentication/login">
+        <div class="element">
+            <label for="username">Email Address</label>
+            <input type="email" name="username" id="username" placeholder="Email Address" required>
+        </div>
+
+        <div class="element">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+        </div>
+
+        <input type="submit" value="Login"> | <a href="#">Forgotten Password?</a>
+    </form>
+</div>
+
+<script type="text/javascript">
+    if(!Modernizr.input.placeholder){
+        $$("#loginForm label").show();
+    }
+</script>

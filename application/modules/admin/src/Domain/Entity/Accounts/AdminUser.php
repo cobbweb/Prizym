@@ -17,7 +17,15 @@ namespace Application\Admin\Domain\Entity\Accounts;
 class AdminUser extends \Application\Core\Domain\Entity\Accounts\User
 {
     
-    
+    /**
+     * @Column(type="datetime", nullable=true)
+     */
+    private $lastLogin;
+
+    public function touch()
+    {
+        $this->lastLogin = new \DateTime();
+    }
     
 }
 

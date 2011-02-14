@@ -8,6 +8,7 @@ namespace Application\Core\Domain\Entity\Accounts;
  * @author Andrew Cobby <cobby@cobbweb.me>
  * 
  * @MappedSuperclass
+ * @cob:Validatable
  */
 class User
 {
@@ -19,24 +20,28 @@ class User
      * @var integer
      */
     private $id;
+
     /**
      * @Column(type="string", nullable=true)
-     *
+     * 
      * @var string
      */
     private $firstName;
+
     /**
      * @Column(type="string", nullable=true)
      *
      * @var string 
      */
     private $lastName;
+
     /**
      * @Column(type="string")
-     *
+     * 
      * @var string
      */
     private $email;
+
     /**
      * @Column(type="string")
      *
@@ -86,7 +91,7 @@ class User
 
     public function setPassword($password)
     {
-        $this->password = $password;
+        $this->password = \Cob\Stdlib\String::create($password)->password();
     }
 
 }

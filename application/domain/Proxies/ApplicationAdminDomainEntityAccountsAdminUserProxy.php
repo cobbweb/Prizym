@@ -27,6 +27,12 @@ class ApplicationAdminDomainEntityAccountsAdminUserProxy extends \Application\Ad
     }
 
     
+    public function touch()
+    {
+        $this->_load();
+        return parent::touch();
+    }
+
     public function getId()
     {
         $this->_load();
@@ -84,6 +90,6 @@ class ApplicationAdminDomainEntityAccountsAdminUserProxy extends \Application\Ad
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'firstName', 'lastName', 'email', 'password');
+        return array('__isInitialized__', 'id', 'firstName', 'lastName', 'email', 'password', 'lastLogin');
     }
 }

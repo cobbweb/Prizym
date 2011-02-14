@@ -1,0 +1,5 @@
+<phpunit bootstrap="./application/bootstrap.php" colors="true">
+    <testsuite name="BlogDomain">
+        <directory>./application/Tests/Module/Blog/Domain</directory>
+    </testsuite>
+</phpunit>
