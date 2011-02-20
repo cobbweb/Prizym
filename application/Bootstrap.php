@@ -14,8 +14,17 @@ class Bootstrap extends \Cob\Application\Bootstrap
         
         $loader = new ClassLoader("Prizym", SRC_PATH . '/lib');
         $loader->register();
-
-        $loader = new ClassLoader("Gedmo", SRC_PATH . '/library/DoctrineExtensions/lib');
+        
+        $loader = new ClassLoader('Doctrine\ORM', SRC_PATH . '/lib/Doctrine/lib');
+        $loader->register();
+        
+        $loader = new ClassLoader('Doctrine\DBAL', SRC_PATH . '/lib/Doctrine/lib/vendor/doctrine-dbal/lib');
+        $loader->register();
+        
+        $loader = new ClassLoader('Doctrine\Common', SRC_PATH . '/lib/Doctrine/lib/vendor/doctrine-common/lib');
+        $loader->register();
+        
+        $loader = new ClassLoader('Symfony', SRC_PATH . '/lib/Doctrine/lib/vendor');
         $loader->register();
     }
     
