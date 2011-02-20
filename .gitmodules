@@ -1,6 +1,0 @@
-[submodule "lib/Cob"]
-	path = lib/Cob
-	url = git@github.com:cobbweb/Cob-ZendFramework-Doctrine2.git
-[submodule "lib/Doctrine"]
-	path = lib/Doctrine
-	url = git://github.com/doctrine/doctrine2.git
