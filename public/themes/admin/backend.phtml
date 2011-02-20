@@ -18,14 +18,18 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 
-    <link rel="stylesheet" href="<?php echo $this->themePath('css/style.css?v=2'); ?>">
-    <link rel="stylesheet/less" type="text/css" href="<?php echo $this->themePath('css/admin.less'); ?>">
-    <link rel="stylesheet" href="/common/jquery-ui-1.8.9.custom/css/prizym/jquery-ui-1.8.9.custom.css" type="text/css" />
-
-    <script type="text/javascript" src="/common/js/less.1.0.41.js"></script>
-    <script src="<?php echo $this->themePath('js/libs/modernizr-1.6.min.js'); ?>"></script>
+    <?php echo $this->headLink()
+		->appendStylesheet($this->themePath('css/style.css?v=2'))
+		->appendStylesheet("/common/jquery-ui-1.8.9.custom/css/prizym/jquery-ui-1.8.9.custom.css")
+		->headLink(array(
+		    'type' => 'text/css',
+		    'rel'  => 'stylesheet/less',
+		    'href' => $this->themePath('css/admin.less')
+		)); ?>
+    
+    <script src="/common/js/less.1.0.41.js" type="text/javascript"></script>
     <script type="text/javascript">
-        less.env = 'production';
+        less.env = 'development';
         less.watch();
     </script>
 
@@ -81,14 +85,10 @@
     </div> <!-- end of #container -->
 
 
-    <script src="/common/jquery-ui-1.8.9.custom/js/jquery-1.4.4.min.js"></script>
-    <script src="/common/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
-
-    <!-- scripts concatenated and minified via ant build script-->
-    <script src="js/plugins.js"></script>
-    <script src="js/script.js"></script>
-    <?php echo $this->headScript(); ?>
-    <!-- end concatenated and minified scripts-->
+    <?php echo $this->headScript()
+		->prependFile($this->themePath('js/libs/modernizr-1.6.min.js'))
+		->prependFile("/common/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js")
+		->prependFile("/common/jquery-ui-1.8.9.custom/js/jquery-1.4.4.min.js"); ?>
 
 
     <!--[if lt IE 7 ]>
@@ -96,10 +96,10 @@
     <script> DD_belatedPNG.fix('img, .png_bg'); </script>
     <![endif]-->
 
-    <!-- yui profiler and profileviewer - remove for production -->
+    <!-- yui profiler and profileviewer - remove for production 
     <script src="js/profiling/yahoo-profiling.min.js"></script>
     <script src="js/profiling/config.js"></script>
-    <!-- end profiling code -->
+    end profiling code -->
 
 
     <!-- change the UA-XXXXX-X to be your site's ID -->
