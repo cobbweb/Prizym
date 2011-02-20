@@ -1,2 +1,9 @@
 <h1>Blog</h1>
 
+<h3>Posts</h3>
+<?php if($this->posts): ?>
+<?php var_dump($this->posts); ?>
+<? else: ?>
+<p>You haven't written any blog posts yet, 
+    <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'blog', 'action'=> 'new')); ?>" title="Write a new blog post">start a new blog post</a>.</p>
+<? endif; ?>

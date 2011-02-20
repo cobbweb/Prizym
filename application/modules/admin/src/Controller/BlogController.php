@@ -35,6 +35,14 @@ class BlogController extends \Application\Admin\Library\Controller\Action
     public function indexAction()
     {
 	$this->view->headTitle('Blog Posts');
+	$posts = $this->_helper->repository('Blog\Domain\Entity\Post');
+	$this->view->posts = $posts->getPosts();
+    }
+    
+    public function newAction()
+    {
+	$this->view->headTitle('New Post');
+	
     }
 
 }

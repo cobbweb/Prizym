@@ -1,0 +1,26 @@
+<?php 
+$this->headScript()->setFile('/modules/blog/admin/js/newPost.js'); 
+$this->headLink(array(
+		'type' => 'text/css',
+		'rel'  => 'stylesheet/less',
+		'href' => '/modules/blog/admin/css/newPost.less'
+		));
+?> 
+
+<div id="blog">
+    <aside id="blogSidebar">
+	
+    </aside>
+    
+    <div id="blogMain">
+	<h1>Write a new Post</h1>  
+	<div>
+	    <label for="title" style="display: none;">Title</label>
+	    <input type="text" name="title" id="title" placeholder="Enter post title here" required>
+	</div>
+	
+	<div>
+	    http://cobbweb.me/<span id="slug"></span>
+	</div>
+    </div>
+</div>
