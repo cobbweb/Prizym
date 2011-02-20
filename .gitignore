@@ -3,3 +3,4 @@ nbproject
 /lib/DoctrineExtensions/
 /application/data/logs/application.log
 /application/domain/Proxies
+/lib/Zend
