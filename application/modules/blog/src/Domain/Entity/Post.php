@@ -11,7 +11,7 @@ use Application\Admin\Domain\Entity\Accounts\AdminUser;
  * 
  * @author Andrew Cobby <cobby@cobbweb.me>
  *
- * @Entity
+ * @Entity(repositoryClass="Application\Blog\Domain\Repository\PostsRepository")
  * @Table(name="blog_posts")
  */
 class Post
