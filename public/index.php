@@ -14,7 +14,7 @@ defined('APPLICATION_ENV')
 
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
-    SRC_PATH . '/lib/Zend/library',
+    SRC_PATH . '/lib/Zend/library/',
     SRC_PATH . '/lib/Doctrine/lib/vendor/doctrine-common/lib'
 )));
 
@@ -33,7 +33,7 @@ function d($var)
 }
 
 
-require_once 'Cob/lib/Cob/Application/Application.php';
+require_once '../lib/Cob/lib/Cob/Application/Application.php';
 
 // Create application, bootstrap, and run
 $application = new \Cob\Application\Application(
