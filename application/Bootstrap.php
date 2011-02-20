@@ -42,7 +42,8 @@ class Bootstrap extends \Cob\Application\Bootstrap
         $em = $this->getResource('doctrine');
 
         HelperBroker::addHelpers(array(
-            new Helper\Service($em)    
+            new Helper\Service($em),
+	    new Helper\Repository($em, $this->getAppNamespace())
         ));
     }
 
