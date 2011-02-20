@@ -38,7 +38,7 @@ require_once '../lib/Cob/lib/Cob/Application/Application.php';
 // Create application, bootstrap, and run
 $application = new \Cob\Application\Application(
     APPLICATION_ENV,
-    APPLICATION_PATH . '/configs/application.yml'
+    APPLICATION_PATH . '/configs/application.yaml'
 );
 
 $application->bootstrap()
