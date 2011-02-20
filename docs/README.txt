@@ -15,12 +15,13 @@ The following is a sample VHOST you might want to consider for your project.
 
 <VirtualHost *:80>
    DocumentRoot "/Users/Cobby/Sites/CodeBlog/public"
-   ServerName CodeBlog.local
+   ServerName prizym.dev
+   ServerAlias www.prizym.dev
 
    # This should be omitted in the production environment
    SetEnv APPLICATION_ENV development
     
-   <Directory "/Users/Cobby/Sites/CodeBlog/public">
+   <Directory "/Users/Cobby/Sites/Prizym/public">
        Options Indexes MultiViews FollowSymLinks
        AllowOverride All
        Order allow,deny
