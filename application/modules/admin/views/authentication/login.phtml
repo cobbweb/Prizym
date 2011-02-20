@@ -8,21 +8,15 @@
     <?php endif; ?>
     <form method="post" action="/admin/authentication/login">
         <div class="element">
-            <label for="username">Email Address</label>
+            <label for="username" style="display: none;">Email Address</label>
             <input type="email" name="username" id="username" placeholder="Email Address" required>
         </div>
 
         <div class="element">
-            <label for="password">Password</label>
+            <label for="password" style="display: none;">Password</label>
             <input type="password" name="password" id="password" placeholder="Password" required>
         </div>
 
         <input type="submit" value="Login"> | <a href="#">Forgotten Password?</a>
     </form>
 </div>
-
-<script type="text/javascript">
-    if(!Modernizr.input.placeholder){
-        $$("#loginForm label").show();
-    }
-</script>
