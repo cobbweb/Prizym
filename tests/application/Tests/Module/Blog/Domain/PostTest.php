@@ -29,7 +29,7 @@ use Application\Blog\Domain\Entity\Post,
     Cob\Stdlib\String;
 
 /**
- * Description of PostTest
+ * Blog Post Unit Test
  *
  * @author Cobby
  */
@@ -78,9 +78,6 @@ class PostTest extends \EntityTestCase
 	$this->assertEquals('Test 1', $posts[0]->getTitle());
     }
     
-    /**
-     * @depends testBasicVersioning
-     */
     public function testVersioning()
     {
 	$post = new Post();
@@ -102,9 +99,6 @@ class PostTest extends \EntityTestCase
 	$this->assertEquals('Test 2', $versions[1]->getTitle());
     }
     
-    /**
-     * @depends testVersioning
-     */
     public function testFirstVersionIsKept()
     {
 	$post = new Post();
