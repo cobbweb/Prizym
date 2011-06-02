@@ -1,0 +1,10 @@
+php_version: '5.3.4'
+
+php_extensions:
+    - apc
+    - mongo
+    - simplexml
+    
+document_root: /public
+default_gateway: /public/index.php
+writable_directories: [/application/data, /application/domain]
